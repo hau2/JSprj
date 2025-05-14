@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .user-management {
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .user-management h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .search-bar {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .search-bar input {
+      padding: 8px;
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .user-table th, .user-table td {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .user-table th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+    .user-table tr:last-child td {
+      border-bottom: none;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .pagination button {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      margin: 0 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .pagination button.active {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+    .status-active {
+      color: #1c9c65;
+      font-weight: bold;
+    }
+    .status-deactivate {
+      color: #f44336;
+      font-weight: bold;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .actions i {
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .actions .edit {
+      color: #ffc107;
+    }
+    .actions .delete {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Trello</h2>
+      <nav>
+        <ul>
+          <li><a href="/pages/dashboard.html">User dashboard</a></li>
+          <li><a href="/pages/add-user.html">Add new user</a></li>
+          <li><a href="#">Sign out</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="user-management">
+        <h1>User Management</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search user by name" id="searchInput">
+        </div>
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>User code</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Birthday</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- JS renders here -->
+          </tbody>
+        </table>
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
